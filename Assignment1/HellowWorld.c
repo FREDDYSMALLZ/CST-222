@@ -7,5 +7,5 @@ CST-221 Brandon Bass
 
 main()
 {
-    printf("Hello World");
+    printf("Hello CST-221 Class!");
 }
