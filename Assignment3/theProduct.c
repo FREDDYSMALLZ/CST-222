@@ -5,29 +5,29 @@ Had issues pulling straight from the activity directions (see pro-cons-issue/png
 #include <stdlib.h>
 #include <pthread.h>
 
-#define MAX_COUNT 10;
+#define MAX 10;
 int i;
 int theProduct = 0;
 
 void consume(int i){
-  printf("Consumer: %i\n", i);
+  	printf("Consumer: %i\n", i);
 }
 
 void *producer(void *var){
 	
-for(i = 0; i < 10; i++){
-        printf("Producer: %i\n", theProduct);
-	theProduct++;
-	sleep(1);
+	for(i = 0; i < MAX; i++){
+		printf("Producer: %i\n", theProduct);
+		theProduct++;
+		sleep(1);
 	}
 exit(0);
 }
 
 void *consumer(void *var){
 
-for(i = 0; i < 10; i++){
-        consume(theProduct);
-	sleep(1);
+	for(i = 0; i < MAX; i++){
+		consume(theProduct);
+		sleep(1);
 	}
 }
 
